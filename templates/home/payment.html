@@ -1,0 +1,21 @@
+{% extends "home/base.html" %}
+{% load static %}
+{% block body_block %}
+  <div class="container">
+    <div class="jumbotron">
+
+          <h1>Donate for any of these affected area </h1>
+
+
+{% for key in affected%}
+      <div class="alert alert-danger">
+          <strong>{{key.unsafe_peoples}}</strong> people reported <strong>{{key}}</strong> in <strong>{{key.city_name}}</strong>
+
+      </div>
+ {% endfor %}
+
+        
+
+    </div>
+  </div>
+{% endblock %}

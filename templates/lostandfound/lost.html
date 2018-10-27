@@ -1,0 +1,40 @@
+{% extends 'home/base.html' %}
+{% block body_block %}
+    <h1>Lost</h1>
+    <form method="POST" class="post-form" action="">
+        {% csrf_token %}
+        {{ lost_form.as_p }}
+        <input type="submit" value="submit"><br>
+        <br>
+
+
+
+    </form>
+			<div class="content">
+				<div class="container-fluid">
+					<div class="row">
+                        {% for s in lost_object%}
+						<div class="col-md-4">
+							<div class="card" style="width:400px"">
+								    <img  class="card-img-top" src="http://127.0.0.1:8000/media/{{s.pic}}"  alt="Card image cap" width ="200">
+                                    <div class="card-body">
+                                        <h4 class="card-title">{{s.name}}</h4>
+									 <p class="card-text">{{s.address}}</p>
+                                    </div>
+								</div>
+							</div>
+
+						{% endfor %}
+                    	</div>
+					</div>
+
+				</div>
+			</div>
+
+
+
+
+
+
+
+{% endblock %}
